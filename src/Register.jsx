@@ -10,7 +10,7 @@ function Register() {
 
     const handleRegister = async () => {
         try {
-            await axios.post("http://localhost:5050/api/auth/register", {
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
                 username,
                 password,
             });

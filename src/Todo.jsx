@@ -3,7 +3,7 @@ import axios from "axios";
 import { getToken, removeToken } from "./auth";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5050/api/todo";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/todo`;
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
