@@ -11,10 +11,13 @@ function Login() {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post("https://api-todo-jwt.onrender.com/api/auth/login", {
-                username,
-                password,
-            });
+            const response = await axios.post(
+                `https://api-todo-jwt.onrender.com/api/auth/login`,
+                {
+                    username,
+                    password,
+                }
+            );
 
             if (response.status === 200 && response.data.token) {
                 saveToken(response.data.token);
@@ -50,7 +53,9 @@ function Login() {
                 <button onClick={handleLogin}>Entrar</button>
                 {error && <p className="error">{error}</p>}
             </div>
-            <p>Não tem conta? <Link to="/register">Cadastre-se</Link></p>
+            <p>
+                Não tem conta? <Link to="/register">Cadastre-se</Link>
+            </p>
         </div>
     );
 }

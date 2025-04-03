@@ -1,20 +1,21 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import axios from "axios";
 import { getToken, removeToken } from "./auth";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api/todo`;
+const API_URL = 'https://api-todo-jwt.onrender.com';
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
     const [newTitle, setNewTitle] = useState("");
     const navigate = useNavigate();
 
-    const headers = {
+    // Use useMemo to memorize the headers object
+    const headers = useMemo(() => ({
         Authorization: `Bearer ${getToken()}`,
-    };
+    }), []);
 
-    // ✅ Função memoizada para evitar warning no useEffect
+    // Função memoizada para evitar warning no useEffect
     const loadTasks = useCallback(async () => {
         try {
             const res = await axios.get(API_URL, { headers });
@@ -49,7 +50,6 @@ function Todo() {
         navigate("/");
     };
 
-    // ✅ useEffect com dependência de função segura
     useEffect(() => {
         loadTasks();
     }, [loadTasks]);

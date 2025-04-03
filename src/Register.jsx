@@ -10,7 +10,7 @@ function Register() {
 
     const handleRegister = async () => {
         try {
-            await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
+            await axios.post(`https://api-todo-jwt.onrender.com/api/auth/register`, {
                 username,
                 password,
             });
