@@ -37,14 +37,6 @@ Perfeita para organizar o dia, marcar o que já foi feito e manter o foco — co
 
 ---
 
-
-👩‍💻 Quem fez isso?
-
-Desenvolvido com muito café ☕ e paixão por código por
-Larissa Campos – 23 anos, dev full-stack com alma de front-end e animação no coração ✨
-
----
-
 ## 🚀 Rodando o Projeto
 
 ### 🔧 Clonar o repositório
