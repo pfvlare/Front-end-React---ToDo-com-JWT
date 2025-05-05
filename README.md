@@ -42,5 +42,5 @@ Perfeita para organizar o dia, marcar o que já foi feito e manter o foco — co
 ### 🔧 Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/pfvlare/Front-end-React---ToDo-com-JWT.git
 
